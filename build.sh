@@ -42,7 +42,7 @@ apk add --update --no-cache --virtual .build-deps \
     libuv-dev \
     freeimage-dev
 
-apk add --repository https://dl-cdn.alpinelinux.org/alpine/edge/testing --update --no-cache \
+apk add --repository https://dl-cdn.alpinelinux.org/alpine/edge/community --update --no-cache \
     crypto++ \
     crypto++-dev
 
