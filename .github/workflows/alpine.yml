@@ -7,10 +7,10 @@ on:
 
 jobs:
   build-and-relase-binaries:
-    name: Build and publish a Docker image
+    name: Build and publish binaries
     runs-on: ubuntu-latest
     container:
-      image: alpine:3.16
+      image: alpine:3.17
     permissions:
       contents: read
       packages: write

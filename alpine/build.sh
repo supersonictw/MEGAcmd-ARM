@@ -1,5 +1,5 @@
 #!/bin/sh
-# MEGAcmd-ARM - Alpine Linux (>=3.16)
+# MEGAcmd-ARM - Alpine Linux (>=3.17)
 # (c) 2023 SuperSonic (https://github.com/supersonictw).
 
 set -e
@@ -46,11 +46,12 @@ apk add --repository https://dl-cdn.alpinelinux.org/alpine/edge/community --upda
     crypto++ \
     crypto++-dev
 
-git clone --recursive --depth 1 --branch "1.5.1_Linux" https://github.com/meganz/MEGAcmd.git /tmp/MEGAcmd
+git clone --recursive --depth 1 --branch "1.6.3_Linux" https://github.com/meganz/MEGAcmd.git /tmp/MEGAcmd
 cd /tmp/MEGAcmd
 
 sh autogen.sh
 ./configure \
+    -std=c++11 \
     --without-freeimage \
     --disable-examples \
     --host=armv6-alpine-linux-musleabihf
