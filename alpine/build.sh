@@ -46,7 +46,7 @@ apk add --repository https://dl-cdn.alpinelinux.org/alpine/edge/community --upda
     crypto++ \
     crypto++-dev
 
-git clone --recursive https://github.com/meganz/MEGAcmd.git /tmp/MEGAcmd
+git clone --recursive --depth 1 --branch "1.6.3_Linux" https://github.com/meganz/MEGAcmd.git /tmp/MEGAcmd
 cd /tmp/MEGAcmd
 
 sh autogen.sh
