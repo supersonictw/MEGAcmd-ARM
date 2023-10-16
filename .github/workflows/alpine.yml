@@ -10,7 +10,7 @@ jobs:
     name: Build and publish a Docker image
     runs-on: ubuntu-latest
     container:
-      image: alpine:3.17
+      image: alpine:3.16
     permissions:
       contents: read
       packages: write
