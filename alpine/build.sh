@@ -50,7 +50,10 @@ git clone --recursive https://github.com/meganz/MEGAcmd.git /tmp/MEGAcmd
 cd /tmp/MEGAcmd
 
 sh autogen.sh
-./configure --host=armv6-alpine-linux-musleabihf
+./configure \
+    --without-freeimage \
+    --disable-examples \
+    --host=armv6-alpine-linux-musleabihf
 make -j $(nproc)
 
 # clean:
