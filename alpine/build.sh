@@ -51,10 +51,12 @@ cd /tmp/MEGAcmd
 
 sh autogen.sh
 ./configure \
-    -std=c++11 \
     --without-freeimage \
     --disable-examples \
     --host=armv6-alpine-linux-musleabihf
+
+sed -i "s/CRYPTO_get_locking_callback()/static_cast<bool>CRYPTO_get_locking_callback()/g" sdk/src/posix/net.cpp
+sed -i "s/CRYPTO_THREADID_get_callback()/static_cast<bool>CRYPTO_THREADID_get_callback()/g" sdk/src/posix/net.cpp
 make -j $(nproc)
 
 # clean:
