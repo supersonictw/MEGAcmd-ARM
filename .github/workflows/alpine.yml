@@ -1,0 +1,27 @@
+name: Alpine Linux
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-relase-binaries:
+    name: Build and publish a Docker image
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Build binaries
+        image: alpine:3.17
+        volumes:
+          - ${env.GITHUB_WORKSPACE}/alpine:/workplace
+        defaults:
+          run:
+            shell: sh /workplace/run.sh
+            working-directory: /workplace

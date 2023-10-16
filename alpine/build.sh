@@ -1,5 +1,5 @@
 #!/bin/sh
-# megacmd_arm32v6_musl
+# MEGAcmd-ARM - Alpine Linux (>=3.17)
 # (c) 2023 SuperSonic (https://github.com/supersonictw).
 
 set -e
